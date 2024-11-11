@@ -1,4 +1,4 @@
-package Product;
+package daoop;
 
 
 public abstract class SanPham {
