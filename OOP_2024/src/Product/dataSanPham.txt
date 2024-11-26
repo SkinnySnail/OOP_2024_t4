@@ -1,0 +1,3 @@
+Paper_product, SP100, Paper, 1500
+Supply, SP200, Supply, 6000
+Paper_product, SP01, A4 khong tham nuoc, 5000

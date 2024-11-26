@@ -2,55 +2,46 @@ package Product;
 
 
 public abstract class SanPham {
-    protected String LSP, maSP, tenSP;
-    protected int donGia;
+    private String  product_id, product_name;
+    private int price;
+    protected String category;
     
-
     public SanPham() {}
-    public SanPham(String LSP, String maSP, String tenSP, int donGia){
-        this.LSP = LSP;
-        this.maSP = maSP;
-        this.tenSP = tenSP;
-        this.donGia = donGia;
-    }
-    public SanPham(String maSP, String tenSP, int donGia) {
-        this.maSP = maSP;
-        this.tenSP = tenSP;
-        this.donGia = donGia;
+    public SanPham(String product_id, String product_name, int price) {
+        this.product_id = product_id;
+        this.product_name = product_name;
+        this.price = price;
     }
 
-    public String getMaSP() {
-        return this.maSP;
+    public String getProduct_id() {
+        return this.product_id;
     }
-    public void setMaSP(String maSP) {
-        this.maSP = maSP;
+    public void setProduct_id(String product_id) {
+        this.product_id = product_id;
     }
-    public String getTenSP() {
-        return this.tenSP;
+    public String getProduct_name() {
+        return this.product_name;
     }
-    public void setTenSP(String tenSP) {
-        this.tenSP = tenSP;
+    public void setProduct_name(String product_name) {
+        this.product_name = product_name;
     }
-    public String getLSP() {
-        return this.LSP;
+    public int getPrice() {
+        return this.price;
     }
-    public void setLSP(String lSP) {
-        this.LSP = lSP;
+    public void setPrice(int price) {
+        this.price = price;
     }
-    public int getDonGia() {
-        return this.donGia;
+    public void setCategory(String category) {
+        this.category = category;
     }
-    public void setDonGia(int donGia) {
-        this.donGia = donGia;
+    public String getCategory() {
+        return category;
     }
-
-    
     public abstract void nhap();
     public abstract void xuat();
-    public abstract void tinhNang();
 
     @Override
     public String toString(){
-        return this.LSP+ ", "+ this.maSP+ ", "+ this.tenSP+", "+ donGia;
+        return this.product_id+ ", "+ this.product_name+", "+ price;
     }
 }
