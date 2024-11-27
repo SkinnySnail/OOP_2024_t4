@@ -31,8 +31,13 @@ public class Tool extends SanPham {
         int gia = Integer.parseInt(sc.nextLine());
         setPrice(gia);
     }
-    public void xuat(){
+    @Override
+    public String toString() {
+        return "Tool [usage=" + usage + ", description=" + description + ", category=" + category + ", id="+ getProduct_id() + ", name="+ getProduct_name() + ", price="+ getPrice()  + "]";
+    }
 
+    public void xuat(){
+         System.out.print("Tool [usage=" + this.usage + ", description=" + this.description + ", category=" + this.category + ", id="+ getProduct_id() + ", name="+ getProduct_name() + ", price="+ getPrice()  + "]");
     }
     
 }

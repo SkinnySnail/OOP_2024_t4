@@ -139,7 +139,7 @@ public void timkiemSanPham(String maOrten) {
 
     public void ghiDataXuongFile(){
         try {
-            FileWriter fw = new FileWriter("dataSanPham.txt");
+            FileWriter fw = new FileWriter("/OOP_2024/src/Product/dataSanPham.txt");
             for (SanPham sp : this.khoHang) {
                 fw.write(sp.toString()+ "\n");
             }
@@ -153,7 +153,7 @@ public void timkiemSanPham(String maOrten) {
     @Override
     public void docDataTuFile(){
         try {
-            BufferedReader br = new BufferedReader(new FileReader("dataSanPham.txt"));
+            BufferedReader br = new BufferedReader(new FileReader("/OOP_2024/src/Product/dataSanPham.txt"));
             String line;
             while((line = br.readLine()) != null){
                 String[] parts = line.split(",");

@@ -35,7 +35,7 @@ public class Paper_product extends SanPham {
     }
 
     public void xuat(){
-        
+        System.out.print("Tool [ptype=" + this.ptype + ", category=" + this.category + ", id="+ getProduct_id() + ", name="+ getProduct_name() + ", price="+ getPrice()  + "]");
     }
     
 }
