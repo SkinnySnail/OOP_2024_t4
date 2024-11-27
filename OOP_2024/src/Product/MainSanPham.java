@@ -9,7 +9,7 @@ public class MainSanPham {
     public void menuProduct() {
         int choice = 0;
         Scanner sc = new Scanner(System.in);
-        File f = new File("/OOP_2024/src/Product/dataSanPham.txt");
+        File f = new File("./dataSanPham.txt");
         do {
             System.out.println("--------------Quan_Li_KHO------------+");
             System.out.println("1. Them vao kho.                     |");

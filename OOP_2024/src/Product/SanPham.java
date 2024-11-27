@@ -40,8 +40,4 @@ public abstract class SanPham {
     public abstract void nhap();
     public abstract void xuat();
 
-    @Override
-    public String toString(){
-        return this.product_id+ ", "+ this.product_name+", "+ price;
-    }
 }
