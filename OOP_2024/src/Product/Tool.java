@@ -33,11 +33,11 @@ public class Tool extends SanPham {
     }
     @Override
     public String toString() {
-        return "Tool [usage=" + usage + ", description=" + description + ", category=" + category + ", id="+ getProduct_id() + ", name="+ getProduct_name() + ", price="+ getPrice()  + "]";
+        return "Tool["+ "category=" + category + ", id="+ getProduct_id() + ", name="+ getProduct_name() + ", price="+ getPrice() + ", usage=" + usage + ", description=" + description + "]";
     }
 
     public void xuat(){
-         System.out.print("Tool [usage=" + this.usage + ", description=" + this.description + ", category=" + this.category + ", id="+ getProduct_id() + ", name="+ getProduct_name() + ", price="+ getPrice()  + "]");
+         System.out.print("Tool [" + "category=" + this.category + ", id="+ getProduct_id() + ", name="+ getProduct_name() + ", price="+ getPrice()  + ", usage=" + this.usage + ", description=" + this.description+"]");
     }
     
 }

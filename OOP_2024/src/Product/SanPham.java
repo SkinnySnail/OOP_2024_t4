@@ -39,5 +39,10 @@ public abstract class SanPham {
     }
     public abstract void nhap();
     public abstract void xuat();
+    @Override
+    public String toString() {
+        return "SanPham [product_id=" + product_id + ", product_name=" + product_name + ", price=" + price
+                + ", category=" + category + "]";
+    }
 
 }

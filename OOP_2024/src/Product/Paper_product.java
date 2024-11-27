@@ -34,8 +34,14 @@ public class Paper_product extends SanPham {
         this.ptype = sc.nextLine();
     }
 
+    @Override
+    public String toString() {
+        return "Paper_product [category=" + this.category + ", id="+ getProduct_id() + ", name="+ getProduct_name() + ", price="+ getPrice() 
+        +"ptype=" + this.ptype + "]";
+    }
+
     public void xuat(){
-        System.out.print("Tool [ptype=" + this.ptype + ", category=" + this.category + ", id="+ getProduct_id() + ", name="+ getProduct_name() + ", price="+ getPrice()  + "]");
+        System.out.print("Paper_product [ptype=" + this.ptype + ", category=" + this.category + ", id="+ getProduct_id() + ", name="+ getProduct_name() + ", price="+ getPrice()  + "]");
     }
     
 }
