@@ -2,7 +2,7 @@ package Product;
 
 import java.util.Scanner;
 
-public class Paper_product extends SanPham {
+public class Paper_product extends Product {
     private String ptype;
     Scanner sc = new Scanner(System.in);
     public Paper_product() {

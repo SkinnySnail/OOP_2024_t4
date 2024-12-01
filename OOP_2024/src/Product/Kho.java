@@ -8,8 +8,8 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.Scanner;
 
-public class Kho implements iDocGhi{
-    ArrayList<SanPham> khoHang;
+public class Kho implements iReaderWriter{
+    ArrayList<Product> khoHang;
     Scanner sc = new Scanner(System.in);
     
     public Kho() {
@@ -27,11 +27,11 @@ public class Kho implements iDocGhi{
             );
             lc = sc.nextInt();
             if(lc == 1){
-                SanPham sp = new Tool();
+                Product sp = new Tool();
                 sp.nhap();
                 this.khoHang.add(sp);
             }else if(lc == 2){
-                SanPham sw = new Paper_product();
+                Product sw = new Paper_product();
                 sw.nhap();
                 this.khoHang.add(sw);
             }
@@ -44,9 +44,9 @@ public class Kho implements iDocGhi{
     }
 
     public void xoaSP(String maSP){
-        for (SanPham sanPham : khoHang) {
-            if(sanPham.getProduct_id().equals(maSP)){
-                this.khoHang.remove(sanPham);
+        for (Product Product : khoHang) {
+            if(Product.getProduct_id().equals(maSP)){
+                this.khoHang.remove(Product);
             }
         }
     }
@@ -59,17 +59,17 @@ public class Kho implements iDocGhi{
     // Các hàm in 
     public void inKho(){
         System.out.println("----------------------- Kho -----------------------");
-        for (SanPham sanPham : khoHang) {
-            sanPham.xuat();
+        for (Product Product : khoHang) {
+            Product.xuat();
         }
         System.out.println("----------------------------------------------------");
     }
 
     public void inPaper_product(){
         System.out.println("------------ Cac san pham la Paper product ------------");
-        for (SanPham sanPham : khoHang) {
-            if(sanPham.getCategory().equals("Paper_product")){
-                sanPham.xuat();
+        for (Product Product : khoHang) {
+            if(Product.getCategory().equals("Paper_product")){
+                Product.xuat();
             }
         }
         System.out.println("----------------------------------------------------");
@@ -77,58 +77,58 @@ public class Kho implements iDocGhi{
 
     public void inTool(){
         System.out.println("------------ Cac san pham la Tool ------------");
-        for (SanPham sanPham : khoHang) {
-            if(sanPham.getCategory().equals("Tool")){
-                sanPham.xuat();
+        for (Product Product : khoHang) {
+            if(Product.getCategory().equals("Tool")){
+                Product.xuat();
             }
         }
         System.out.println("----------------------------------------------------");
     }
 
-public void timkiemSanPham(String maOrten) {
-        for (SanPham sanPham : khoHang) {
-            if (sanPham.getProduct_id().equals(maOrten) || sanPham.getProduct_name().indexOf(maOrten) >= 0) {
-                sanPham.xuat();
+public void timkiemProduct(String maOrten) {
+        for (Product Product : khoHang) {
+            if (Product.getProduct_id().equals(maOrten) || Product.getProduct_name().indexOf(maOrten) >= 0) {
+                Product.xuat();
             }
         }
     }
 
-    public void timkiemSanPhamTheoGiaTien(int min, int max) {
-        for (SanPham sanPham : khoHang) {
-            if (sanPham.getPrice() >= min && sanPham.getPrice() <= max) {
-                sanPham.xuat();
+    public void timkiemProductTheoGiaTien(int min, int max) {
+        for (Product Product : khoHang) {
+            if (Product.getPrice() >= min && Product.getPrice() <= max) {
+                Product.xuat();
             }
         }
     }
 
-    public void timkiemSanPhamThapDenCao() {
-        Collections.sort(this.khoHang, new Comparator<SanPham>() {
+    public void timkiemProductThapDenCao() {
+        Collections.sort(this.khoHang, new Comparator<Product>() {
             @Override
-            public int compare(SanPham sp1, SanPham sp2) {
+            public int compare(Product sp1, Product sp2) {
                 return Integer.compare(sp1.getPrice(), sp2.getPrice());
             }
         });
     }
 
-    public void timkiemSanPhamCaoDenThap() {
-        Collections.sort(this.khoHang, new Comparator<SanPham>() {
+    public void timkiemProductCaoDenThap() {
+        Collections.sort(this.khoHang, new Comparator<Product>() {
             @Override
-            public int compare(SanPham sp1, SanPham sp2) {
+            public int compare(Product sp1, Product sp2) {
                 return Integer.compare(sp2.getPrice(), sp1.getPrice());
             }
         });
     }
 
-    public SanPham laySPtheoMa(String maSP) {
-        for (SanPham sanPham : khoHang) {
-            if (sanPham.getProduct_id().equals(maSP)) {
-                if (sanPham.getCategory().equals("Tool")) {
-                    SanPham sp = new Tool();
-                    sp = (Tool) sanPham;
+    public Product laySPtheoMa(String maSP) {
+        for (Product Product : khoHang) {
+            if (Product.getProduct_id().equals(maSP)) {
+                if (Product.getCategory().equals("Tool")) {
+                    Product sp = new Tool();
+                    sp = (Tool) Product;
                     return sp;
-                } else if (sanPham.getCategory().equals("Paper_product")) {
-                    SanPham sw = new Paper_product();
-                    sw = (Paper_product) sanPham;
+                } else if (Product.getCategory().equals("Paper_product")) {
+                    Product sw = new Paper_product();
+                    sw = (Paper_product) Product;
                     return sw;
                 }
             }
@@ -139,8 +139,8 @@ public void timkiemSanPham(String maOrten) {
 
     public void ghiDataXuongFile(){
         try {
-            FileWriter fw = new FileWriter("dataSanPham.txt");
-            for (SanPham sp : this.khoHang) {
+            FileWriter fw = new FileWriter("dataProduct.txt");
+            for (Product sp : this.khoHang) {
                 fw.write(sp.toString()+ "\n");
             }
             fw.close();
@@ -153,7 +153,7 @@ public void timkiemSanPham(String maOrten) {
     @Override
     public void docDataTuFile(){
         try {
-            BufferedReader br = new BufferedReader(new FileReader("dataSanPham.txt"));
+            BufferedReader br = new BufferedReader(new FileReader("dataProduct.txt"));
             String line;
             while((line = br.readLine()) != null){
                 String[] parts = line.split(",");

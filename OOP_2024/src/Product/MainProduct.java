@@ -3,13 +3,13 @@ package Product;
 import java.io.File;
 import java.util.Scanner;
 
-public class MainSanPham {
+public class MainProduct {
     Kho khoHang = new Kho();
 
     public void menuProduct() {
         int choice = 0;
         Scanner sc = new Scanner(System.in);
-        File f = new File("./dataSanPham.txt");
+        File f = new File("./dataProduct.txt");
         do {
             System.out.println("--------------Quan_Li_KHO------------+");
             System.out.println("1. Them vao kho.                     |");
@@ -34,7 +34,7 @@ public class MainSanPham {
                 khoHang.xoaSP(sc.nextInt());
             } else if (choice == 3) {
                 System.out.println("Nhap vao maSP muon tim: ");
-                khoHang.timkiemSanPham(sc.nextLine());
+                khoHang.timkiemProduct(sc.nextLine());
             } else if (choice == 4) {
                 System.out.print("Ban co chac chan khong(true/false): ");
                 Boolean confirm = sc.nextBoolean();
@@ -53,7 +53,7 @@ public class MainSanPham {
     }
 
     public static void main(String[] args) {
-        MainSanPham main = new MainSanPham();
+        MainProduct main = new MainProduct();
         main.menuProduct();
     }
 }

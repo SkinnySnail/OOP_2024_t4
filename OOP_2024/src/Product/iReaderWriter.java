@@ -1,6 +1,6 @@
 package Product;
 
-public interface iDocGhi {
+public interface iReaderWriter {
         void docDataTuFile();
         void ghiDataXuongFile();
 }

@@ -1,18 +1,24 @@
 package Product;
 
 
-public abstract class SanPham {
+public abstract class Product {
     private String  product_id, product_name;
     private int price;
     protected String category;
-    
-    public SanPham() {}
-    public SanPham(String product_id, String product_name, int price) {
+    public Brand brand;
+    public Product() {}
+    public Product(String product_id, String product_name, int price) {
         this.product_id = product_id;
         this.product_name = product_name;
         this.price = price;
     }
 
+    public Brand getBrand() {
+        return brand;
+    }
+    public void setBrand(Brand brand) {
+        this.brand = brand;
+    }
     public String getProduct_id() {
         return this.product_id;
     }
@@ -41,7 +47,7 @@ public abstract class SanPham {
     public abstract void xuat();
     @Override
     public String toString() {
-        return "SanPham [product_id=" + product_id + ", product_name=" + product_name + ", price=" + price
+        return "Product [product_id=" + product_id + ", product_name=" + product_name + ", price=" + price
                 + ", category=" + category + "]";
     }
 

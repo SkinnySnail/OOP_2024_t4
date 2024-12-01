@@ -2,7 +2,7 @@ package Product;
 
 import java.util.Scanner;
 
-public class Tool extends SanPham {
+public class Tool extends Product {
     private String usage, description;
     Scanner sc = new Scanner(System.in);
     public Tool() {
