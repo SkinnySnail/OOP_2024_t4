@@ -1,6 +1,6 @@
 package Product;
 
-import java.io.File;
+
 import java.util.Scanner;
 
 public class MainProduct {
@@ -9,7 +9,7 @@ public class MainProduct {
     public void menuProduct() {
         int choice = 0;
         Scanner sc = new Scanner(System.in);
-        File f = new File("./dataProduct.txt");
+        
         do {
             System.out.println("--------------Quan_Li_KHO------------+");
             System.out.println("1. Them vao kho.                     |");
@@ -50,6 +50,7 @@ public class MainProduct {
                 khoHang.docDataTuFile();
             } 
         } while (choice != 0);
+        sc.close();    
     }
 
     public static void main(String[] args) {

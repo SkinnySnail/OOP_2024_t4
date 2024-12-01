@@ -145,7 +145,7 @@ public void timkiemProduct(String maOrten) {
             }
             fw.close();
         } catch (Exception e) {
-            // TODO: handle exception
+            
             e.printStackTrace();
         }
     }
@@ -172,7 +172,7 @@ public void timkiemProduct(String maOrten) {
             }
             br.close();
         } catch (Exception e) {
-            // TODO: handle exception
+            
             System.out.println(e);
         }
     }
