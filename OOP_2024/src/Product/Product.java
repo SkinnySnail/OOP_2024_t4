@@ -5,7 +5,7 @@ public abstract class Product {
     private String  product_id, product_name;
     private int price;
     protected String category;
-    public Brand brand;
+    private Brand brand;
     public Product() {}
     public Product(String product_id, String product_name, int price) {
         this.product_id = product_id;
@@ -48,7 +48,7 @@ public abstract class Product {
     @Override
     public String toString() {
         return "Product [product_id=" + product_id + ", product_name=" + product_name + ", price=" + price
-                + ", category=" + category + "]";
+                + ", category=" + category + "]" + ",brand=" + brand;
     }
 
 }

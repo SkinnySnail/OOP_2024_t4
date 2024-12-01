@@ -37,11 +37,12 @@ public class Paper_product extends Product {
     @Override
     public String toString() {
         return "Paper_product [category=" + this.category + ", id="+ getProduct_id() + ", name="+ getProduct_name() + ", price="+ getPrice() 
-        +"ptype=" + this.ptype + "]";
+        +"ptype=" + this.ptype + ",brand=" + getBrand() +"]";
     }
 
     public void xuat(){
-        System.out.print("Paper_product [ptype=" + this.ptype + ", category=" + this.category + ", id="+ getProduct_id() + ", name="+ getProduct_name() + ", price="+ getPrice()  + "]");
+        System.out.print("Paper_product [ptype=" + this.ptype + ", category=" + this.category + ", id="+ getProduct_id() + ", name="+ getProduct_name() 
+        + ", price="+ getPrice()  + ",brand=" + getBrand() + "]");
     }
     
 }

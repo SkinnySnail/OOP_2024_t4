@@ -33,11 +33,13 @@ public class Tool extends Product {
     }
     @Override
     public String toString() {
-        return "Tool["+ "category=" + category + ", id="+ getProduct_id() + ", name="+ getProduct_name() + ", price="+ getPrice() + ", usage=" + usage + ", description=" + description + "]";
+        return "Tool["+ "category=" + category + ", id="+ getProduct_id() + ", name="+ getProduct_name() + ", price="+ getPrice() 
+        + ", usage=" + usage + ", description=" + description + ",brand=" + getBrand() + "]";
     }
 
     public void xuat(){
-         System.out.print("Tool [" + "category=" + this.category + ", id="+ getProduct_id() + ", name="+ getProduct_name() + ", price="+ getPrice()  + ", usage=" + this.usage + ", description=" + this.description+"]");
+         System.out.print("Tool [" + "category=" + this.category + ", id="+ getProduct_id() + ", name="+ getProduct_name() 
+         + ", price="+ getPrice()  + ", usage=" + this.usage + ", description=" + this.description+ ",brand=" + getBrand() +"]");
     }
     
 }

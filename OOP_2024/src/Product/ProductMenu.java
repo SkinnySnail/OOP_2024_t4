@@ -3,7 +3,7 @@ package Product;
 
 import java.util.Scanner;
 
-public class MainProduct {
+public class ProductMenu {
     Kho khoHang = new Kho();
 
     public void menuProduct() {
@@ -54,7 +54,7 @@ public class MainProduct {
     }
 
     public static void main(String[] args) {
-        MainProduct main = new MainProduct();
+       ProductMenu main = new ProductMenu();
         main.menuProduct();
     }
 }
