@@ -6,7 +6,7 @@ import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class BrandList implements iDocGhi {
+public class BrandList implements iReaderWriter {
     ArrayList<Brand> BList;
     Scanner sc = new Scanner(System.in);
     public BrandList() {
