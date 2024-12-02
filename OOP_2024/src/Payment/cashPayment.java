@@ -1,10 +1,9 @@
 import java.util.Scanner;
 
-class cashpayment extends payment{
+public class cashpayment extends payment {
     private String tenthungan;
     private double sotiennhan;
     private double sotientl;
-
     public cashpayment(){
         super();
         this.tenthungan = "";

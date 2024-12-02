@@ -1,10 +1,8 @@
-import java.util.Scanner;
 import java.util.ArrayList;
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.FileReader;
-import java.io.FileWriter;
-class payment{
+import java.util.Scanner;
+import java.io.*;
+
+public class payment {
     private double sotientt;
     private String phuongthuctt;
     private String trangthaitt;
@@ -13,7 +11,6 @@ class payment{
         this.phuongthuctt = "";
         this.trangthaitt = "";
     }
-
     public payment(double sotientt, String phuongthuctt, String trangthaitt){
         this.sotientt = sotientt;
         this.phuongthuctt = phuongthuctt;
@@ -44,7 +41,7 @@ class payment{
         sc.nextLine();
         System.out.print("Nhap trang thai thanh toan : ");
         this.trangthaitt = sc.nextLine();
-        if (this.trangthaitt.filetrong()){
+        if (this.trangthaitt.isEmpty()){
             this.trangthaitt = "Chua thanh toan";
         }
     }
@@ -57,35 +54,35 @@ class payment{
         try (BufferedWriter ghi = new BufferedWriter(new FileWriter("incart.txt", append))){
             if (!append){
                 ghi.write("");
-            } else if (hoadon.size() > 0){
+            }
+            else{
                 for (int i = 0; i < hoadon.size(); i++){
                     ghi.write(hoadon.get(i).toString());
                     ghi.newLine();
-                    ghi.write("--------------------");//dùng để cách hàng dữ liệu trong file cho dễ nhìn
-                    ghi.newLine();
+                    ghi.write("----------------------");
+                    ghi.newLine();//them dong moi
                 }
                 System.out.println("Da ghi vao file");
             }
-        } catch (Exception e){
+        } 
+        catch (Exception e){
             System.out.println("Loi khong ghi duoc vao tep");
         }
-    }
+    }    
 
     public static void docFile(String tenfile){
         try (BufferedReader doc = new BufferedReader(new FileReader(tenfile))){
             String dong;
             boolean filetrong = true;
             while ((dong = doc.readLine()) != null){
-                if (!dong.filetrong()){ 
-                    filetrong = false;
-                }
+                filetrong = false;
                 System.out.println(dong);
             }
             if (filetrong){
-                System.out.println("Khong co thong tin trong file");
+                System.out.println("Khong co lich su thanh toan");
             }
         } catch (Exception e){
             System.out.println("Loi khong doc duoc file");
         }
-    }
+    }    
 }
