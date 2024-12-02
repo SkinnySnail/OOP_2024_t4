@@ -1,0 +1,57 @@
+Cart ID: CART001Product ID: PROD001Product Name: Product 1Price: 100.0Quantity: 2Total Price: 200.0------------------------------OrderID: ORD123CustomerID: CUST001EmployeeID: nullOrderDate: 2024-12-01ProductCount: 1TotalValue: 200.0Phuong thuc thanh toan: NoXac nhan don hang: NoDia chi giao hang: nullCart ID: CART001Product ID: PROD001Product Name: Product 1Price: 100.0Quantity: 2Total Price: 200.0------------------------------OrderID: ORD123CustomerID: CUST001EmployeeID: nullOrderDate: 2024-12-01ProductCount: 1TotalValue: 200.0Phuong thuc thanh toan: NoXac nhan don hang: NoDia chi giao hang: nullCart ID: CART001Product ID: P001Product Name: Product APrice: 100.0Quantity: 2Total Price: 200.0------------------------------Cart ID: CART002Product ID: P002Product Name: Product BPrice: 200.0Quantity: 1Total Price: 200.0------------------------------OrderID: ORD002CustomerID: CUST002EmployeeID: nullOrderDate: 2024-12-02ProductCount: 1TotalValue: 400.0Phuong thuc thanh toan: NoXac nhan don hang: NoDia chi giao hang: 123 Street, CityCart ID: CART001Product ID: P001Product Name: Product APrice: 100.0Quantity: 2Total Price: 200.0------------------------------Cart ID: CART002Product ID: P002Product Name: Product BPrice: 200.0Quantity: 1Total Price: 200.0------------------------------OrderID: ORD002CustomerID: CUST002EmployeeID: nullOrderDate: 2024-12-02ProductCount: 1TotalValue: 400.0Phuong thuc thanh toan: NoXac nhan don hang: NoDia chi giao hang: 123 Street, CityCart ID: CART001Product ID: P001Product Name: Product APrice: 100.0Quantity: 2Total Price: 200.0------------------------------Cart ID: CART002Product ID: P002Product Name: Product BPrice: 200.0Quantity: 1Total Price: 200.0------------------------------OrderID: ORD002CustomerID: CUST002EmployeeID: nullOrderDate: 2024-12-02ProductCount: 1TotalValue: 400.0Phuong thuc thanh toan: NoXac nhan don hang: NoDia chi giao hang: 123 Street, CityCart ID: CART001Product ID: P001Product Name: Product APrice: 100.0Quantity: 2Total Price: 200.0------------------------------Cart ID: CART002Product ID: P002Product Name: Product BPrice: 200.0Quantity: 1Total Price: 200.0------------------------------OrderID: ORD002CustomerID: CUST002EmployeeID: nullOrderDate: 2024-12-02ProductCount: 1TotalValue: 400.0Phuong thuc thanh toan: NoXac nhan don hang: NoDia chi giao hang: 123 Street, CityCart ID: CART001Product ID: P001Product Name: Product APrice: 100.0Quantity: 2Total Price: 200.0------------------------------Cart ID: CART002Product ID: P002Product Name: Product BPrice: 200.0Quantity: 1Total Price: 200.0------------------------------OrderID: ORD002CustomerID: CUST002EmployeeID: nullOrderDate: 2024-12-02ProductCount: 1TotalValue: 400.0Phuong thuc thanh toan: NoXac nhan don hang: NoDia chi giao hang: 123 Street, CityCart ID: CART001Product ID: P001Product Name: Product APrice: 100.0Quantity: 2Total Price: 200.0------------------------------Cart ID: CART002Product ID: P002Product Name: Product BPrice: 200.0Quantity: 1Total Price: 200.0------------------------------OrderID: ORD002CustomerID: CUST002EmployeeID: nullOrderDate: 2024-12-02ProductCount: 1TotalValue: 400.0Phuong thuc thanh toan: NoXac nhan don hang: NoDia chi giao hang: 123 Street, CityCart ID: CART001Product ID: P001Product Name: Product APrice: 100.0Quantity: 2Total Price: 200.0------------------------------Cart ID: CART002Product ID: P002Product Name: Product BPrice: 200.0Quantity: 1Total Price: 200.0------------------------------OrderID: ORD002CustomerID: CUST002EmployeeID: nullOrderDate: 2024-12-02ProductCount: 1TotalValue: 400.0Phuong thuc thanh toan: NoXac nhan don hang: NoDia chi giao hang: 123 Street, CityCart ID: CART001Product ID: P001Product Name: Product APrice: 100.0Quantity: 2Total Price: 200.0------------------------------Cart ID: CART002Product ID: P002Product Name: Product BPrice: 200.0Quantity: 1Total Price: 200.0------------------------------OrderID: ORD002
+CustomerID: CUST002
+EmployeeID: null
+OrderDate: 2024-12-02
+ProductCount: 1
+TotalValue: 400.0
+----
+Cart ID: CART001Product ID: P001Product Name: Product APrice: 100.0Quantity: 2Total Price: 200.0------------------------------Cart ID: CART002Product ID: P002Product Name: Product BPrice: 200.0Quantity: 1Total Price: 200.0------------------------------OrderID: ORD002
+CustomerID: CUST002
+EmployeeID: null
+OrderDate: 2024-12-02
+ProductCount: 1
+TotalValue: 400.0
+----
+OrderID: O004
+CustomerID: C004
+EmployeeID: null
+OrderDate: 2024-12-04
+ProductCount: 2
+TotalValue: 0.0
+----
+OrderID: O004
+CustomerID: C004
+EmployeeID: null
+OrderDate: 2024-12-04
+ProductCount: 2
+TotalValue: 0.0
+----
+OrderID: O004
+CustomerID: C004
+EmployeeID: null
+OrderDate: 2024-12-04
+ProductCount: 2
+TotalValue: 0.0
+----
+OrderID: O004
+CustomerID: C004
+EmployeeID: null
+OrderDate: 2024-12-04
+ProductCount: 2
+TotalValue: 0.0
+----
+OrderID: O004
+CustomerID: C004
+EmployeeID: null
+OrderDate: 2024-12-04
+ProductCount: 2
+TotalValue: 0.0
+----
+OrderID: O004
+CustomerID: C004
+EmployeeID: null
+OrderDate: 2024-12-04
+ProductCount: 2
+TotalValue: 0.0
+----
+OrderID: O004CustomerID: C004EmployeeID: E004OrderDate: 2024-12-04ProductCount: 0TotalValue: 0.0Phuong thuc thanh toan: YesXac nhan don hang: YesDia chi giao hang: 123 Main St, City AOrderID: ON001CustomerID: C001EmployeeID: E001OrderDate: 2024-12-01ProductCount: 0TotalValue: 0.0Phuong thuc thanh toan: YesXac nhan don hang: YesDia chi giao hang: 123 Main St
