@@ -5,7 +5,8 @@ public abstract class Product {
     private String  product_id, product_name;
     private int price;
     protected String category;
-    public Brand brand;
+    public int itemnum;
+    
     public Product() {}
     public Product(String product_id, String product_name, int price) {
         this.product_id = product_id;
@@ -13,14 +14,27 @@ public abstract class Product {
         this.price = price;
     }
 
-    public Brand getBrand() {
-        return brand;
+    public Product(String product_id, String product_name, int price, int itemnum) {
+        this.product_id = product_id;
+        this.product_name = product_name;
+        this.price = price;
+        this.itemnum = itemnum;
     }
-    public void setBrand(Brand brand) {
-        this.brand = brand;
+    public Product(String product_id, String product_name, int price, String category, int itemnum) {
+        this.product_id = product_id;
+        this.product_name = product_name;
+        this.price = price;
+        this.category = category;
+        this.itemnum = itemnum;
     }
     public String getProduct_id() {
         return this.product_id;
+    }
+    public int getItemnum() {
+        return itemnum;
+    }
+    public void setItemnum(int itemnum) {
+        this.itemnum = itemnum;
     }
     public void setProduct_id(String product_id) {
         this.product_id = product_id;
@@ -43,12 +57,11 @@ public abstract class Product {
     public String getCategory() {
         return category;
     }
+
+
+
     public abstract void nhap();
     public abstract void xuat();
-    @Override
-    public String toString() {
-        return "Product [product_id=" + product_id + ", product_name=" + product_name + ", price=" + price
-                + ", category=" + category + "]" + ",brand=" + brand;
-    }
+    
 
 }

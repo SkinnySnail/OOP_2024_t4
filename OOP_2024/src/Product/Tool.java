@@ -3,22 +3,28 @@ package Product;
 import java.util.Scanner;
 
 public class Tool extends Product {
-    private String usage, description;
+    
     Scanner sc = new Scanner(System.in);
-    public Tool() {
-        this.category = "Tool";
-    }
+    
 
     public Tool(String product_id, String product_name, int price) {
         super(product_id, product_name, price);
     }
 
-    public Tool(String maSP, String tenSP, int donGia, String us, String des) {
-        super(maSP, tenSP, donGia);
+    public Tool(String maSP, String tenSP, int donGia,int num) {
+        super(maSP, tenSP, donGia,num);
         this.category = "Tool";
-        this.usage = us;
-        this.description = des;
     }
+
+    public Tool(String product_id, String product_name, int price, String category, int itemnum) {
+        super(product_id, product_name, price, category, itemnum);
+    }
+    public Tool() {
+        this.category = "Tool";
+    }
+
+    
+
     @Override
     public void nhap() {
         System.out.print("Nhap vao ma san pham: ");
@@ -34,7 +40,7 @@ public class Tool extends Product {
 
 
     public void xuat(){
-        System.out.printf("%-25s%-25s%-21s%-26d%-13d\n", this.category , getProduct_id() , getProduct_name() , getPrice() , this.brand.getBrand_id());
+        System.out.printf("%-25s%-25s%-21s%-26d%-13d\n", this.category , getProduct_id() , getProduct_name() , getPrice(),getItemnum());
     }
     
 }
