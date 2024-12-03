@@ -51,13 +51,13 @@ order order = new order();
                     System.out.println("Gio hang dang trong vui long them truoc thi thanh toan !!!");
                 } else {
                     gioHang.ghiTenSPvaDonGiaVaoFile();
-                    order.inputOrderInfo();
-                    order.displayOrderInfo();
-                    paymenu.selectPaymentmethod();
-                    order.ghiFileOrder();
-                    order.giamSoLuongSanPham();
-                    gioHang.xoaTatCa();
-                    // khoHang.CapNhatsl();
+                    //order.inputOrderInfo();
+                    //order.displayOrderInfo();
+                    //paymenu.selectPaymentmethod();
+                    //order.ghiFileOrder();
+                    //order.giamSoLuongSanPham();
+                    //gioHang.xoaTatCa();
+                     khoHang.CapNhatsl();
                 }
 
                 // dsGH.themVaoDanhSachGH(gioHang);
@@ -246,4 +246,3 @@ order order = new order();
 
 }
 
-}

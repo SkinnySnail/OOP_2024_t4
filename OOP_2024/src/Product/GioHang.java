@@ -83,10 +83,8 @@ public class GioHang {
     public void ghiTenSPvaDonGiaVaoFile() {
         try {
             FileWriter writer = new FileWriter("danhsachspdadat.txt");
-            String line1 =(String.format("%-24s%-24s%-24s\n","Ten SP","Don gia","So Luong"));
-            writer.write(line1);
             for (Product sanPham : this.gioHang) {
-                String line = (String.format("%-24s%-24s%-24d\n",sanPham.getProduct_name()+"|",sanPham.getPrice()+"|",sanPham.getItemnum()));
+                String line = (String.format(sanPham.getProduct_name()+","+sanPham.getPrice()+","+sanPham.getItemnum()));
                 writer.write(line);
 
             }

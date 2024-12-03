@@ -147,8 +147,8 @@ public void timkiemProduct(String masp) {
             String line;
             while ((line = br.readLine()) != null) {
         
-                String[] parts = line.split("\\|");
-                    tenSP = parts[1].trim();
+                String[] parts = line.split(",");
+                    tenSP = parts[0].trim();
                     Soluong = Integer.parseInt(parts[2].trim()); 
                 
                 for(Product sp : khoHang){

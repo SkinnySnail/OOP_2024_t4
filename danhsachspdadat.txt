@@ -1,2 +1,1 @@
-Ten SP                  Don gia                 So Luong                
-Pen|                    4000|                   3                       
+Paper,1500,20
