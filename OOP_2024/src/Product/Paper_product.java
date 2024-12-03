@@ -34,15 +34,9 @@ public class Paper_product extends Product {
         this.ptype = sc.nextLine();
     }
 
-    @Override
-    public String toString() {
-        return "Paper_product [category=" + this.category + ", id="+ getProduct_id() + ", name="+ getProduct_name() + ", price="+ getPrice() 
-        +"ptype=" + this.ptype + ",brand=" + getBrand() +"]" + "\n";
-    }
 
     public void xuat(){
-        System.out.print("Paper_product [ptype=" + this.ptype + ", category=" + this.category + ", id="+ getProduct_id() + ", name="+ getProduct_name() 
-        + ", price="+ getPrice()  + ",brand=" + getBrand() + "]");
+        System.out.printf("%-25s%-25s%-21s%-26d%-13d\n", this.category , getProduct_id() , getProduct_name() , getPrice() , this.brand.getBrand_id());
     }
     
 }

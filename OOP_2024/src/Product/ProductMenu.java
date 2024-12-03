@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class ProductMenu {
     Kho khoHang = new Kho();
-
+    BrandList Blist = new BrandList();
     public void menuProduct() {
         int choice = 0;
         Scanner sc = new Scanner(System.in);

@@ -5,7 +5,7 @@ public abstract class Product {
     private String  product_id, product_name;
     private int price;
     protected String category;
-    private Brand brand;
+    public Brand brand;
     public Product() {}
     public Product(String product_id, String product_name, int price) {
         this.product_id = product_id;

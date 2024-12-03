@@ -31,15 +31,10 @@ public class Tool extends Product {
         int gia = Integer.parseInt(sc.nextLine());
         setPrice(gia);
     }
-    @Override
-    public String toString() {
-        return "Tool["+ "category=" + category + ", id="+ getProduct_id() + ", name="+ getProduct_name() + ", price="+ getPrice() 
-        + ", usage=" + usage + ", description=" + description + ",brand=" + getBrand() + "]" +"\n";
-    }
+
 
     public void xuat(){
-         System.out.print("Tool [" + "category=" + this.category + ", id="+ getProduct_id() + ", name="+ getProduct_name() 
-         + ", price="+ getPrice()  + ", usage=" + this.usage + ", description=" + this.description+ ",brand=" + getBrand() +"]");
+        System.out.printf("%-25s%-25s%-21s%-26d%-13d\n", this.category , getProduct_id() , getProduct_name() , getPrice() , this.brand.getBrand_id());
     }
     
 }
