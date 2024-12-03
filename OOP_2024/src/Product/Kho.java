@@ -9,7 +9,7 @@ import java.util.Comparator;
 import java.util.Scanner;
 
 public class Kho implements iReaderWriter{
-    private ArrayList<Product> khoHang;
+    public ArrayList<Product> khoHang;
     Scanner sc = new Scanner(System.in);
     
     public Kho() {
