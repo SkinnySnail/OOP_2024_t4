@@ -1,3 +1,0 @@
-Nguy?n V?n A,1990-01-15,a@gmail.com,Nam,123,Lê L?i,Qu?n 1,TP.HCM,KH001,VIP,1000
-Tr?n Th? B,1995-05-20,b@gmail.com,N?,123,Lê L?i,Qu?n 1,TP.HCM,KH002,Th??ng,500
-Ph?m V?n E,2000-12-25,e@gmail.com,Nam,789,Tr?n Phú,Qu?n 5,TP.HCM,KH003,VIP,200
