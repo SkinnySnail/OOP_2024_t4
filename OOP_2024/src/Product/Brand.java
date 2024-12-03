@@ -6,8 +6,6 @@ public class Brand {
     private  String brand_id, brand_name;
     Scanner sc = new Scanner(System.in);
 
-    
-
     public Brand() {
     }
 

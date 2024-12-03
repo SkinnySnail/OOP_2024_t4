@@ -39,9 +39,7 @@ public class Kho implements iReaderWriter{
     }
 
     // các hàm xóa
-    public void xoaSP(int vitri){
-        this.khoHang.remove(vitri);
-    }
+    
 
     public void xoaSP(String maSP){
         for (Product Product : khoHang) {
@@ -85,10 +83,14 @@ public class Kho implements iReaderWriter{
         System.out.println("----------------------------------------------------");
     }
 
-public void timkiemProduct(String maOrten) {
+public void timkiemProduct(String masp) {
         for (Product Product : khoHang) {
-            if (Product.getProduct_id().equals(maOrten) || Product.getProduct_name().indexOf(maOrten) >= 0) {
+            if (Product.getProduct_id().equals(masp)) {
                 Product.xuat();
+                break;
+            }
+            else{
+                System.out.println("San pham ko ton tai");
             }
         }
     }
@@ -137,6 +139,36 @@ public void timkiemProduct(String maOrten) {
         return null;
     }
 
+    public void CapNhatsl(){
+        int Soluong;
+        String tenSP;
+        try {
+            BufferedReader br = new BufferedReader(new FileReader("danhsachspdadat.txt"));
+            String line;
+            while ((line = br.readLine()) != null) {
+        
+                String[] parts = line.split("\\|");
+                    tenSP = parts[1].trim();
+                    Soluong = Integer.parseInt(parts[2].trim()); 
+                
+                for(Product sp : khoHang){
+                    if(tenSP.equalsIgnoreCase(sp.getProduct_name())){
+                        sp.itemnum = sp.getItemnum() - Soluong;
+                        return;
+
+                    }
+
+                }
+            }
+            br.close();
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        
+        this.ghiDataXuongFile();
+    }
+
     public void ghiDataXuongFile(){
         try {
             FileWriter fw = new FileWriter("dataProduct.txt");
@@ -161,13 +193,12 @@ public void timkiemProduct(String maOrten) {
                 String maSP = parts[1].trim();
                 String tenSP = parts[2].trim();
                 int donGia = Integer.parseInt(parts[3].trim());
+                int num = Integer.parseInt(parts[4].trim());
                 if(category.equals("Tool")){
-                    String us = parts[4].trim();
-                    String des = parts[5].trim();
-                    this.khoHang.add(new Tool(maSP, tenSP, donGia,us,des));
+                    this.khoHang.add(new Tool(maSP, tenSP, donGia,num));
                 }else if(category.equals("Paper_product")){
-                    String pptype = parts[4].trim();
-                    this.khoHang.add(new Paper_product(maSP, tenSP, donGia,pptype));
+                    String pptype = parts[5].trim();
+                    this.khoHang.add(new Paper_product(maSP, tenSP, donGia,num,pptype));
                 }
             }
             br.close();

@@ -13,10 +13,18 @@ public class Paper_product extends Product {
         super(product_id, product_name, price);
     }
 
-    public Paper_product(String maSP, String tenSP, int donGia, String type) {
-        super(maSP, tenSP, donGia);
+    public Paper_product(String maSP, String tenSP, int donGia,int num, String type) {
+        super(maSP, tenSP, donGia,num);
         this.category = "Paper_product";
         this.ptype = type;
+    }
+
+    public String getPtype() {
+        return ptype;
+    }
+
+    public void setPtype(String ptype) {
+        this.ptype = ptype;
     }
 
     @Override
@@ -36,7 +44,7 @@ public class Paper_product extends Product {
 
 
     public void xuat(){
-        System.out.printf("%-25s%-25s%-21s%-26d%-13d\n", this.category , getProduct_id() , getProduct_name() , getPrice() , this.brand.getBrand_id());
+        System.out.printf("%-25s%-25s%-21s%-26d%-13d%-26s\n", this.category , getProduct_id() , getProduct_name() , getPrice(),getItemnum(),getPtype());
     }
     
 }

@@ -10,7 +10,7 @@ public class Employeerights extends Account {
     customers cusList = new CustomerList();
     ProductMenu mainSP = new ProductMenu();
     order order = new order();
-    BillDetail billdetail = new BillDetail(order);
+    cartDetailsArray billdetail = new BillDetail(order);
     MainGioHang mainGh = new MainGioHang();
     MainTestMuahang mainMh = new MainTestMuahang();
     ListAccount listacc = new ListAccount();

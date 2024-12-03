@@ -110,7 +110,7 @@ public class KiemTra {
         while (true) {
             dauvao = input.nextLine();
             dauvao = dauvao.toUpperCase();
-            if (dauvao.matches("^CUS[0-9]{4}$")) {
+            if (dauvao.matches("^CUS[0-9]{3}$")) {
                 return dauvao;
 
             } else {
