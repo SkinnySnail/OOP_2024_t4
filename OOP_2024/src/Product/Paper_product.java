@@ -37,7 +37,7 @@ public class Paper_product extends Product {
     @Override
     public String toString() {
         return "Paper_product [category=" + this.category + ", id="+ getProduct_id() + ", name="+ getProduct_name() + ", price="+ getPrice() 
-        +"ptype=" + this.ptype + ",brand=" + getBrand() +"]";
+        +"ptype=" + this.ptype + ",brand=" + getBrand() +"]" + "\n";
     }
 
     public void xuat(){

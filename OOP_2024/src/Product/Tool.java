@@ -34,7 +34,7 @@ public class Tool extends Product {
     @Override
     public String toString() {
         return "Tool["+ "category=" + category + ", id="+ getProduct_id() + ", name="+ getProduct_name() + ", price="+ getPrice() 
-        + ", usage=" + usage + ", description=" + description + ",brand=" + getBrand() + "]";
+        + ", usage=" + usage + ", description=" + description + ",brand=" + getBrand() + "]" +"\n";
     }
 
     public void xuat(){
