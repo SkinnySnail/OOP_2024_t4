@@ -1,7 +1,6 @@
 package ORDER;
 
 import java.io.FileWriter;
-// import java.io.writeFile;
 
 public class cart_detail {
 
