@@ -61,7 +61,7 @@ public class payment {
                     ghi.write(hoadon.get(i).toString());
                     ghi.newLine();
                     ghi.write("----------------------");
-                    ghi.newLine();//them dong moi
+                    ghi.newLine();
                 }
                 System.out.println("Da ghi vao file");
             }
