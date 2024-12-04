@@ -46,7 +46,7 @@ public class paymentmodify{
         for (int i = 0; i < danhSachhoadon.size(); i++){
             if (danhSachhoadon.get(i).equals("----------------------")){
                 soLuonghoadon++;
-                System.out.println("Hóa đơn " + soLuonghoadon + ":");
+                System.out.println("Hoa don " + soLuonghoadon + ":");
                 for (int j = vtbatdau; j < i; j++){
                     System.out.println((j - vtbatdau + 1) + ". " + danhSachhoadon.get(j));
                 }
@@ -178,7 +178,7 @@ public class paymentmodify{
                     continue;
                 }
             }
-            System.out.println("Da sua hoa don!");
+            System.out.println("Da sua hoa don");
         } catch (Exception e){
             System.out.println("Loi khong ghi duoc file");
         }
