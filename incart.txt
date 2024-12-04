@@ -1,16 +1,1 @@
-Phuong thuc thanh toan : The ngan hang
-So tien thanh toan : 10000.0
-Trang thai thanh toan : Chua thanh toan
-So the : 120310231
-Loai the : the tin dung
-Ten chu the : lam tuyet ngan
-Mat khau : ltn123
-----------------------
-Phuong thuc thanh toan : The ngan hang
-So tien thanh toan : 10000.0
-Trang thai thanh toan : da thanh toan
-So the : 1231391239
-Loai the : the ngan hang
-Ten chu the : lam tuan kiet
-Mat khau : ltk123
-----------------------
+
