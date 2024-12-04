@@ -3,13 +3,15 @@ import ORDER.*;
 import Payment.*;
 import java.util.Scanner;
 
+import Main.KiemTra;
+
 public class MainTestMuahang {
-order order = new order();
-    paymentMenu paymenu = new paymentMenu();
+    static order order = new order();
+    static paymentMenu paymenu = new paymentMenu();
 
     static int choice, lc;
     static Kho khoHang = new Kho();
-
+    static KiemTra kt = new KiemTra();
     static DanhSachGioHang dsGH = new DanhSachGioHang();
 
     static Scanner sc = new Scanner(System.in);
@@ -57,7 +59,7 @@ order order = new order();
                     //order.ghiFileOrder();
                     //order.giamSoLuongSanPham();
                     //gioHang.xoaTatCa();
-                     khoHang.CapNhatsl();
+                    khoHang.CapNhatsl();
                 }
 
                 // dsGH.themVaoDanhSachGH(gioHang);
@@ -170,7 +172,7 @@ order order = new order();
                 case 1:
 
                     System.out.println("Nhap vao ma san pham muon tim kiem.");
-                    String sp = sc.nextLine();
+                    String sp = kt.kiemtraMaSanpham();
                     khoHang.timkiemProduct(sp);
                     break;
 
@@ -178,8 +180,8 @@ order order = new order();
 
                     System.out.println("Nhap vao donGia min, max (VD: 1000000 3000000)");
                     int min, max;
-                    min = sc.nextInt();
-                    max = sc.nextInt();
+                    min = kt.KiemTraNhapSoNguyen();
+                    max = kt.KiemTraNhapSoNguyen();
                     khoHang.timkiemProductTheoGiaTien(min, max);
                     break;
 
@@ -215,7 +217,7 @@ order order = new order();
             switch (lc) {
                 case 1:
                     System.out.print("Nhap vao maSP: ");
-                    String maSP = sc.nextLine();
+                    String maSP = kt.kiemtraMaSanpham();
                     gioHang.xoaKhoiGioHang(maSP);
                     break;
 
@@ -224,7 +226,7 @@ order order = new order();
                         System.out.println("Nhap vao vi tri san pham: ");
                         int viTri;
                         try {
-                            viTri = sc.nextInt();
+                            viTri = kt.KiemTraNhapSoTuNhien();
                         } catch (Exception e) {
                             System.out.println("Vi tri khong hop le.Vui long nhap lai !");
                             sc.nextLine();

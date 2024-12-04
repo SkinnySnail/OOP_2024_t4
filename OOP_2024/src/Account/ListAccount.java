@@ -29,23 +29,28 @@ public class ListAccount implements Iterable<Account> {
         return false;
     }
 
-    public void readAccount() throws IOException {
-
-        String filePath = "project_lthdt\\src\\ACCOUNT\\ListAccount.txt";
-
-        try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
+    public void readAccount(){
+        try {
+            BufferedReader br = new BufferedReader(new FileReader("ListAccount.txt"));
             String line;
-            while ((line = reader.readLine()) != null) {
-                String[] parts = line.split(" ");
-                if (parts.length >= 2) {
-                    String username = parts[1];
-                    String password = parts[0];
-                    Account account = new Account(username, password, "");
-                    addAccount(account);
-                } else {
-                    // Xử lý trường hợp dòng không hợp lệ, nếu cần thiết
+            while((line = br.readLine()) != null){
+                String[] parts = line.split(",");
+                String username = parts[1];
+                String password = parts[0];
+                String role = parts[2];
+                if(role.equals("CUS")){
+                    CustomerAcc cus1 = new CustomerAcc(username, password, "",role);
+                    addAccount(cus1);
+                }else if(role.equals("EMP")){
+                    Employeerights emp1 = new Employeerights(username, password, "",role);
+                    addAccount(emp1);
                 }
+
             }
+            br.close();
+        } catch (Exception e) {
+            
+            System.out.println(e);
         }
     }
 
@@ -73,9 +78,8 @@ public class ListAccount implements Iterable<Account> {
     }
 
     public void writeAccount() throws IOException {
-        String filePath = "project_lthdt\\src\\ACCOUNT\\ListAccount.txt";
-
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath, false))) {
+        
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("ListAccount.txt", false))) {
             for (Account account : accounts) {
                 writer.write(account.getUsername() + " " + account.getPassword());
                 writer.newLine();
@@ -115,16 +119,14 @@ public class ListAccount implements Iterable<Account> {
         ListAccount listAccount = new ListAccount();
 
         try {
-
+            listAccount.readAccount();
             // listAccount.readAccount();
             listAccount.printAcc();
 
             // listAccount.printAcc();
 
             // listAccount.deleteAccount("usernameToDelete");
-
-            listAccount.writeAccount();
-        } catch (IOException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }

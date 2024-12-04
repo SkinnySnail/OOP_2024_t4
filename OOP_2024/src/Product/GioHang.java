@@ -169,30 +169,6 @@ public class GioHang {
         }
         return false;
     }
-    @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = 1;
-        result = prime * result + ((gioHang == null) ? 0 : gioHang.hashCode());
-        return result;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        GioHang other = (GioHang) obj;
-        if (gioHang == null) {
-            if (other.gioHang != null)
-                return false;
-        } else if (!gioHang.equals(other.gioHang))
-            return false;
-        return true;
-    }
 
     @Override
     public String toString() {

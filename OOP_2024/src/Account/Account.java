@@ -5,6 +5,7 @@ public class Account {
     public String password;
     public String username;
     public String confirm;
+    public String role;
     Scanner sc = new Scanner(System.in);
 
     public Account() {
@@ -17,6 +18,15 @@ public class Account {
         this.password = password;
         this.username = username;
         this.confirm = confirm;
+    }
+
+    
+
+    public Account(String password, String username, String confirm, String role) {
+        this.password = password;
+        this.username = username;
+        this.confirm = confirm;
+        this.role = role;
     }
 
     public String getPassword() {

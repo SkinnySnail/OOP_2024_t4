@@ -2,7 +2,7 @@ package Payment;
 import java.util.ArrayList;
 import java.util.Scanner;
 public class paymentMenu {
-    public static void main(String[] args) {
+    public void paymentmenu() {
         Scanner sc = new Scanner(System.in);
         int z;
         while (true){
@@ -55,5 +55,9 @@ public class paymentMenu {
                 System.out.println("Lua chon khong hop le, hay chon lai");
             }
         }
+    }
+    public static void main(String[] args) {
+       paymentMenu main = new paymentMenu();
+        main.paymentmenu();
     }
 }

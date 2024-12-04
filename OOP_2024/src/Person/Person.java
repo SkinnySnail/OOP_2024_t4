@@ -3,71 +3,71 @@ import java.time.LocalDate;
 import java.time.Period;
 
 public abstract class Person {
-    protected String name;
-    protected LocalDate birthDate;
-    protected String email;
-    protected String gender;
-    protected Address address;
+    public String Ten;
+    public LocalDate NgaySinh;
+    public String Email;
+    public String GioiTinh;
+    public DiaChi diachi;
 
     // Constructor
     public Person() {}
 
-    public Person(String name, LocalDate birthDate, String email, String gender, Address address) {
-        this.name = name;
-        this.birthDate = birthDate;
-        this.email = email;
-        this.gender = gender;
-        this.address = address;
+    public Person(String ten, LocalDate ngaysinh, String email, String gioitinh, DiaChi diachi) {
+        Ten=ten;
+        NgaySinh=ngaysinh;
+        Email = email;
+        GioiTinh = gioitinh;
+        this.diachi = diachi;
     }
 
     // Getters và Setters
-    public String getName() {
-        return name;
+    public String getTen() {
+        return Ten;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setTen(String ten) {
+        Ten=ten;
     }
 
-    public LocalDate getBirthDate() {
-        return birthDate;
+    public LocalDate getNgaySinh() {
+        return NgaySinh;
     }
 
-    public void setBirthDate(LocalDate birthDate) {
-        this.birthDate = birthDate;
+    public void setNgaySinh(LocalDate ngaysinh) {
+        NgaySinh=ngaysinh;
     }
 
     public String getEmail() {
-        return email;
+        return Email;
     }
 
     public void setEmail(String email) {
-        this.email = email;
+        Email = email;
     }
 
-    public String getGender() {
-        return gender;
+    public String getGioiTinh() {
+        return GioiTinh;
     }
 
-    public void setGender(String gender) {
-        this.gender = gender;
+    public void setGioiTinh(String gioitinh) {
+        GioiTinh=gioitinh;
     }
 
-    public Address getAddress() {
-        return address;
+    public DiaChi getDiaChi() {
+        return diachi;
     }
 
-    public void setAddress(Address address) {
-        this.address = address;
+    public void setDiaChi(DiaChi diachi) {
+        this.diachi = diachi;
     }
 
     // Tính tuổi
-    public int calculateAge() {
-        return Period.between(this.birthDate, LocalDate.now()).getYears();
+    public int TinhTuoi() {
+        return Period.between(this.NgaySinh, LocalDate.now()).getYears();
     }
 
     // Hàm trừu tượng nhập và xuất thông tin
-    public abstract void inputInformation();
+    public abstract void NhapTT();
 
-    public abstract void displayInformation();
+    public abstract void XuatTT();
 }
