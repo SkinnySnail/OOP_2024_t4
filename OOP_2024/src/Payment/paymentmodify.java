@@ -34,12 +34,10 @@ public class paymentmodify{
             System.out.println("Loi khong doc duoc file");
             return;
         }
-        
         if (danhSachhoadon.isEmpty()){
             System.out.println("Khong ton tai hoa don");
             return;
         }
-        
         System.out.println("Cac hoa don : ");
         int soLuonghoadon = 0;
         int vtbatdau = 0;
@@ -54,19 +52,15 @@ public class paymentmodify{
                 vtbatdau = i + 1;
             }
         }
-        
         System.out.print("Chon so thu tu hoa don muon sua: ");
         int thuTu = sc.nextInt();
         sc.nextLine();
-        
         if (thuTu < 1 || thuTu > soLuonghoadon){
             System.out.println("Lua chon khong hop le");
             return;
         }
-        
         int vtbatdau2 = 0;
         int hdhientai = 1;
-        
         for (int i = 0; i < danhSachhoadon.size(); i++){
             if (danhSachhoadon.get(i).equals("----------------------")){
                 if (hdhientai == thuTu){
@@ -76,15 +70,12 @@ public class paymentmodify{
                 hdhientai++;
             }
         }
-        
         ArrayList<String> hoadonSua = new ArrayList<>();
         int vtketthuc = vtbatdau2;
-        
         while (vtketthuc < danhSachhoadon.size() && !danhSachhoadon.get(vtketthuc).equals("----------------------")){
             hoadonSua.add(danhSachhoadon.get(vtketthuc));
             vtketthuc++;
         }
-        
         String phuongThucTT = "";
         for (String dong : hoadonSua){
             if (dong.contains("Phuong thuc thanh toan")){
@@ -92,9 +83,7 @@ public class paymentmodify{
                 break;
             }
         }
-        
         payment hoadonmoi;
-        
         if (phuongThucTT.equals("Tien mat")){
             hoadonmoi = new cashpayment();
             hoadonmoi.setPhuongthuctt("Tien mat");
@@ -106,16 +95,14 @@ public class paymentmodify{
                     break;
                 }
             }
-            
             ((cashpayment)hoadonmoi).setTenthungan(tenThuNgan);
         } else if (phuongThucTT.equals("The ngan hang")){
             hoadonmoi = new cardpayment();
             hoadonmoi.setPhuongthuctt("The ngan hang");
-            
             String soThe = "";
             String loaiThe = "";
             String tenChuThe = "";
-            
+            String matKhau = "";
             for (String dong : hoadonSua){
                 if (dong.contains("So the")){
                     soThe = dong.split(" : ")[1].trim();
@@ -123,51 +110,39 @@ public class paymentmodify{
                     loaiThe = dong.split(" : ")[1].trim();
                 } else if (dong.contains("Ten chu the")){
                     tenChuThe = dong.split(" : ")[1].trim();
+                } else if (dong.contains("Mat khau")){
+                    matKhau = dong.split(" : ")[1].trim();
                 }
             }
-            
             ((cardpayment)hoadonmoi).setSothe(soThe);
             ((cardpayment)hoadonmoi).setLoaithe(loaiThe);
             ((cardpayment)hoadonmoi).setTenchuthe(tenChuThe);
+            ((cardpayment)hoadonmoi).setMatkhau(matKhau);
         } else{
             System.out.println("Khong the sua hoa don");
             return;
         }
         double soTienTT = 0.0;
         String trangThaiTT = "";
-        
+        double soTienKhachTra = 0.0;
         for (String dong : hoadonSua){
             if (dong.contains("So tien thanh toan")){
                 soTienTT = Double.parseDouble(dong.split(" : ")[1].trim());
             } else if (dong.contains("Trang thai thanh toan")){
                 trangThaiTT = dong.split(" : ")[1].trim();
+            } else if (dong.contains("So tien khach tra")){
+                soTienKhachTra = Double.parseDouble(dong.split(" : ")[1].trim());
             }
         }
-        
         hoadonmoi.setSotientt(soTienTT);
         hoadonmoi.setTrangthaitt(trangThaiTT);
-        
         hoadonmoi.nhap();
         dshoadon.subList(vtbatdau2, vtketthuc).clear();
         String[] thaythe = hoadonmoi.toString().split("\n");
         for (int i = 0; i < thaythe.length; i++){
             dshoadon.add(vtbatdau2 + i, thaythe[i]);
         }
-        
-        if (hoadonmoi instanceof cashpayment){
-            cashpayment cashPayment = (cashpayment) hoadonmoi;
-            dshoadon.add(vtbatdau2 + thaythe.length, 
-                "So tien khach tra : " + cashPayment.getSotiennhan());
-            dshoadon.add(vtbatdau2 + thaythe.length + 1, 
-                "So tien tra lai : " + cashPayment.getSotientl());
-        } else if (hoadonmoi instanceof cardpayment){
-            cardpayment cardPayment = (cardpayment) hoadonmoi;
-            dshoadon.add(vtbatdau2 + thaythe.length, 
-                "So tien khach tra : " + cardPayment.getsotiennhan());
-            dshoadon.add(vtbatdau2 + thaythe.length + 1, 
-                "So tien tra lai : " + cardPayment.getSotientl());
-        }
-        try (BufferedWriter ghi = new BufferedWriter(new FileWriter("incart.txt"))){
+        try(BufferedWriter ghi = new BufferedWriter(new FileWriter("incart.txt"))){
             for (int i = 0; i < dshoadon.size(); i++){
                 ghi.write(dshoadon.get(i));
                 ghi.newLine();
