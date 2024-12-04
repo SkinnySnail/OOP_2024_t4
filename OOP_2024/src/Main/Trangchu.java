@@ -10,7 +10,7 @@ public class Trangchu  {
     Scanner sc = new Scanner(System.in);
     String taikhoan;
     String matkhau;
-
+    Admin admin = new Admin();
     public void Menu() {
         System.out.println("                          =================================================");
         System.out.println("                          CHAO MUNG DEN VOI CUA HANG BAN DO VAN PHONG PHAM");
@@ -27,11 +27,16 @@ public class Trangchu  {
             System.out.print("Mat khau: ");
             matkhau = sc.nextLine();
             list.readAccount();
-            if (taikhoan.matches("^EMP[0-9]{3}$")  && list.TKandMK(taikhoan, matkhau)) {
+            if ("admin".equals(taikhoan) && "admin".equals(matkhau)) {
+                admin.readFile();
+                admin.AdminManeger();
+                isValidLogin = true;
+            }
+    else    if (taikhoan.matches("^EMP[0-9]{3}$")  && list.TKandMK(taikhoan, matkhau)) {
                 emp.EmployeeManeger();
                 isValidLogin = true;
                 }
-       else if (taikhoan.matches("^CUS[0-9]{3}$")  && list.TKandMK(taikhoan, matkhau)) {
+    else    if (taikhoan.matches("^CUS[0-9]{3}$")  && list.TKandMK(taikhoan, matkhau)) {
             cus.CustomerManeger();
             isValidLogin = true;
             }
