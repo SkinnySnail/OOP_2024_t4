@@ -2,8 +2,10 @@ package Product;
 
 import java.util.Scanner;
 
+import Main.KiemTra;
+
 public class Tool extends Product {
-    
+    KiemTra kt = new KiemTra();
     Scanner sc = new Scanner(System.in);
     
 
@@ -28,19 +30,30 @@ public class Tool extends Product {
     @Override
     public void nhap() {
         System.out.print("Nhap vao ma san pham: ");
-        String maSP = sc.nextLine();
+        String maSP = kt.kiemtraMaSanpham();
         setProduct_id(maSP); 
         System.out.print("Nhap vao ten san pham: ");
-        String tenSP = sc.nextLine();
+        String tenSP = kt.nhapChuoi();
         setProduct_name(tenSP);
         System.out.print("Nhap vao gia cua san pham: ");
-        int gia = Integer.parseInt(sc.nextLine());
+        int gia = kt.KiemTraNhapSoNguyen();
         setPrice(gia);
+        System.out.print("Nhap vao so luong cua san pham: ");
+        int sl = kt.KiemTraNhapSoTuNhien();
+        setItemnum(sl);
     }
 
 
     public void xuat(){
         System.out.printf("%-25s%-25s%-21s%-26d%-13d\n", this.category , getProduct_id() , getProduct_name() , getPrice(),getItemnum());
     }
+
+    @Override
+    public String toString() {
+        return category + "," + itemnum + "," + getProduct_id()
+        + "," + getItemnum() + "," + getProduct_name()
+        + "," + getPrice();
+    }
+    
     
 }

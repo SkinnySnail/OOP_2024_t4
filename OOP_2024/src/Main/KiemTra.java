@@ -114,7 +114,7 @@ public class KiemTra {
                 return dauvao;
 
             } else {
-                System.out.println("Nhap khong chinh xac. Vi du: CUS0001");
+                System.out.println("Nhap khong chinh xac. Vi du: CUS001");
             }
             System.out.print("Nhap lai: ");
 

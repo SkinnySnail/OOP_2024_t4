@@ -4,6 +4,7 @@ import java.util.Scanner;
 import Person.*;
 import ORDER.*;
 import Product.*;
+import Main.*;
 
 
 public class Admin extends Account {
@@ -11,14 +12,13 @@ public class Admin extends Account {
     int choose;
     String idToDelete;
     ListAccount list = new ListAccount();
-    CustomerList cusList = new CustomerList();
-    Employeelist empList = new Employeelist();
-    billdetailList billList = new billdetailList();
-    BillDetail billdetail = new BillDetail(null);
-    MainSanPham mainSP = new MainSanPham();
+    DSKH cusList = new DSKH();
+    DSNV empList = new DSNV();
+    bildetailList billList = new bildetailList();
+    ProductMenu mainSP = new ProductMenu();
     Kho khoHang = new Kho();
     MainTestMuahang mainMH = new MainTestMuahang();
-    Kiemtra kt = new Kiemtra();
+    KiemTra kt = new KiemTra();
 
     public Admin() {
         super();
@@ -87,36 +87,31 @@ public class Admin extends Account {
 
     }
 
-    public void CreateBill() {
-        billdetail.getBillDetail();
-        billdetail.writeToFile();
-    }
-
     public void InforEmployee() {
         int chon;
         do {
             System.out.println("-----------InforEmp----------+");
             System.out.println("1 : Xem thong tin Employee   |");
             System.out.println("2 : xoa thong tin Employee   |");
-            System.out.println("3 : Them thong tin Employe   |");
+            System.out.println("3 : Them thong tin Employee  |");
             System.out.println("0 : Thoat                    |");
             System.out.println("-----------------------------+");
             System.out.print("Nhap lua chon: ");
             chon = sc.nextInt();
             switch (chon) {
                 case 1:
-                    empList.displayInfo();
+                    empList.displayTTNV();
                     break;
                 case 2:
-                    empList.readEmployeeFile();
-                    empList.Xoa();
-                    empList.writeEmployeeFile();
+                    empList.docFile();
+                    empList.displayTTNV();
+                    empList.ghiFile();
                     break;
                 case 3:
-                    Employee emp = new Employee();
-                    emp.Nhap();
-                    empList.add(emp);
-                    empList.writeEmployeeFile();
+                    NhanVien emp = new NhanVien();
+                    emp.NhapTT();
+                    empList.themNhanVien(emp);
+                    empList.ghiFile();
                     break;
                 case 0:
                     chon = 0;
@@ -143,8 +138,8 @@ public class Admin extends Account {
             chon = sc.nextInt();
             switch (chon) {
                 case 1:
-                    cusList.readFile();
-                    cusList.displayInfo();
+                    cusList.docFile();
+                    cusList.displayTTKH();
                     break;
                 case 2:
                     System.out.print("Nhap Id can xoa : ");
@@ -152,10 +147,10 @@ public class Admin extends Account {
                     // cusList.removeCustomerById(idToDelete);
                     break;
                 case 3:
-                    Customer cus = new Customer();
-                    cus.Nhap();
-                    cusList.add(cus);
-                    cusList.writeFile();
+                    KhachHang cus = new KhachHang();
+                    cus.NhapTT();
+                    cusList.themKhachHang(cus);
+                    cusList.ghiFile();
                     break;
                 case 0:
                     chon = 0;
@@ -171,44 +166,14 @@ public class Admin extends Account {
         mainSP.menuProduct();
     }
 
-    public void editBill() {
-        do {
-            System.out.println("--------------EditBill------------+");
-            System.out.println("1. Xem All Bill                   |");
-            System.out.println("2. Search Bill                    |");
-            System.out.println("3. Detele Bill                    |");
-            System.out.println("0. Thoat                          |");
-            System.out.println("----------------------------------+");
-            System.out.print("Nhap lua chon: ");
-            int chon = sc.nextInt();
-            switch (chon) {
-                case 1:
-                    billdetail.xuatAllBillDetail();
-                    break;
-                case 2:
-                    billdetail.searchBillByBillDetailCode();
-                    break;
-                case 3:
-                    billdetail.deleteBillDetail();
-                    break;
-                case 0:
-                    chon = 0;
-                    break;
-                default:
-                    break;
-            }
-        } while (choose != 0);
-    }
 
     public void AdminManeger() {
         int exit;
         do {
-            System.out.println("---------------ADMIN-------------+");
-            System.out.println("1 : Tao hoa don                  |");
+            System.out.println("---------------Employee-------------+");
             System.out.println("2 : Tao don hang                 |");
             System.out.println("3 : Thong tin nhan vien          |");
             System.out.println("4 : Thong tin khach hang         |");
-            System.out.println("5 : Edit BIll                    |");
             System.out.println("6 : Kho - storage                |");
             System.out.println("7 : Them tai khoan nhan vien     |");
             System.out.println("8 : Xoa tai khoan nhan vien      |");
@@ -223,17 +188,6 @@ public class Admin extends Account {
             }
 
             switch (choose) {
-                case 1:
-                    try {
-                        if (list.isFileEmpty()) {
-                            System.out.println("Don hang trong. Moi ban tao don hang truoc khi tao hoa don!");
-                        } else {
-                            CreateBill();
-                        }
-                        list.deleteFileghiorder();
-                    } catch (Exception e) {
-                    }
-                    break;
                 case 2:
                     mainMH.menuMh();
                     break;
@@ -242,9 +196,6 @@ public class Admin extends Account {
                     break;
                 case 4:
                     InforCustomers();
-                    break;
-                case 5:
-                    editBill();
                     break;
                 case 6:
                     menuStorage();
@@ -271,11 +222,11 @@ public class Admin extends Account {
     public void readFile() {
         try {
             list.readAccount();
-            empList.initializeEmployees();
-            empList.writeEmployeeFile();
+            empList.createSampleData();
+            empList.ghiFile();
             // cusList.defaultCustomers();
             // cusList.writeFile();
-        } catch (IOException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }

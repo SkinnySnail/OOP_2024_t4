@@ -1,0 +1,5 @@
+Nguyen Van An,01/01/1990,1234567890,cusA@example.com,Nam,1,Duong 1,Quan 1,TP HCM,CUS001,silver,100
+phan thanh loc,02/02/2004,1234567890,loc@gmail.com,Nam,2,Duong 2,Quan 2,TP HCM,CUS002,gold,200
+Nguyen Thi Huong, 29/02/2000, 0908070605, hg@gmail.com, Nu,6, Duong 6, Quan 6, TP HCM, CUS006, bronze, 50
+Bui Thai Tien Khanh, 04/04/2004, 0906090201, bttk@gmail.com, Nam,7,Duong so 7, Quan Binh Tan, TP HCM, CUS999, silver,100
+

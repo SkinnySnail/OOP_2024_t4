@@ -5,11 +5,10 @@ import java.util.Scanner;
 
 public class ProductMenu {
     Kho khoHang = new Kho();
-    BrandList Blist = new BrandList();
     public void menuProduct() {
         int choice = 0;
         Scanner sc = new Scanner(System.in);
-        
+        khoHang.docDataTuFile();
         do {
             System.out.println("--------------Quan_Li_KHO------------+");
             System.out.println("1. Them vao kho.                     |");
@@ -22,7 +21,7 @@ public class ProductMenu {
             System.out.print("Nhap lua chon : ");
             choice = sc.nextInt();
             sc.nextLine();
-            khoHang.docDataTuFile();
+            
             if (choice == 1) {
                 khoHang.themVaoKho();
                 khoHang.ghiDataXuongFile();

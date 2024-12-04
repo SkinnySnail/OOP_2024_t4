@@ -1,12 +1,11 @@
 package Main;
-import java.io.IOException;
 import java.util.Scanner;
 import Account.*;
 
 
-public class Trangchu {
-    Admin admin = new Admin();
+public class Trangchu  {
     Employeerights emp = new Employeerights();
+    CustomerAcc cus = new CustomerAcc();
     ListAccount list = new ListAccount();
     Scanner sc = new Scanner(System.in);
     String taikhoan;
@@ -27,15 +26,16 @@ public class Trangchu {
             System.out.println();
             System.out.print("Mat khau: ");
             matkhau = sc.nextLine();
-
-            if ("admin".equals(taikhoan) && "admin".equals(matkhau)) {
-                admin.readFile();
-                admin.AdminManeger();
-                isValidLogin = true;
-            } else if (list.TKandMK(taikhoan, matkhau)) {
+            list.readAccount();
+            if (taikhoan.matches("^EMP[0-9]{3}$")  && list.TKandMK(taikhoan, matkhau)) {
                 emp.EmployeeManeger();
                 isValidLogin = true;
-            } else {
+                }
+       else if (taikhoan.matches("^CUS[0-9]{3}$")  && list.TKandMK(taikhoan, matkhau)) {
+            cus.CustomerManeger();
+            isValidLogin = true;
+            }
+            else {
                 System.out.println();
                 System.out.println("Ten tai khoan hoac mat khau khong hop le. Vui long nhap lai !");
                 System.out.println();
@@ -46,8 +46,9 @@ public class Trangchu {
     public void readFile() {
         try {
             list.readAccount();
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (Exception e) {
+            
+            System.out.println(e);
         }
     }
 

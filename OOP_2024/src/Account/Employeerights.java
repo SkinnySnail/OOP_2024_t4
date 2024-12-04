@@ -7,10 +7,9 @@ import Person.*;
 public class Employeerights extends Account {
     Kho KhoHang = new Kho();
     Scanner sc = new Scanner(System.in);
-    customers cusList = new CustomerList();
+    DSKH cusList = new DSKH();
     ProductMenu mainSP = new ProductMenu();
     order order = new order();
-    cartDetailsArray billdetail = new BillDetail(order);
     MainGioHang mainGh = new MainGioHang();
     MainTestMuahang mainMh = new MainTestMuahang();
     ListAccount listacc = new ListAccount();
@@ -19,15 +18,19 @@ public class Employeerights extends Account {
         super();
     }
 
+    
+
     public Employeerights(String password, String username, String confirm) {
-
+        super(password, username, confirm);
     }
 
-    public void CreateBill() {
 
-        billdetail.getBillDetail();
-        billdetail.writeToFile();
+
+    public Employeerights(String password, String username, String confirm,String role) {
+        super(password,username,confirm);
+        this.role="EMP";
     }
+
 
     public void InforCustomers() {
         // int exit;
@@ -43,8 +46,8 @@ public class Employeerights extends Account {
             chon = sc.nextInt();
             switch (chon) {
                 case 1:
-                    cusList.readFile();
-                    cusList.getListCustomer();
+                    cusList.docFile();
+                    cusList.displayTTKH();
                     break;
                 // case 2:
                 // cusList.Xoa();
@@ -80,33 +83,21 @@ public class Employeerights extends Account {
         int exit, choose;
         do {
             System.out.println("+----------EMPLOYEE----------+");
-            System.out.println("1 : Tao hoa don              |");
-            System.out.println("2 : Kho - Storage            |");
-            System.out.println("3 : Thong tin khach hang     |");
-            System.out.println("4 : Tao don hang             |");
+            System.out.println("1 : Kho - Storage            |");
+            System.out.println("2 : Thong tin khach hang     |");
+            System.out.println("3 : Tao don hang             |");
             System.out.println("0 : Thoat                    |");
             System.out.println("+----------------------------+");
             System.out.print("Nhap lua chon : ");
             choose = sc.nextInt();
             switch (choose) {
                 case 1:
-                    try {
-                        if (listacc.isFileEmpty()) {
-                            System.out.println("Don hang trong. Moi ban tao don hang truoc khi tao hoa don!");
-                        } else {
-                            CreateBill();
-                        }
-                        listacc.deleteFileghiorder();
-                    } catch (Exception e) {
-                    }
-                    break;
-                case 2:
                     menuStorage();
                     break;
-                case 3:
+                case 2:
                     InforCustomers();
                     break;
-                case 4:
+                case 3:
                     createOrder();
                     break;
                 case 0:

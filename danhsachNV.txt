@@ -1,0 +1,5 @@
+Nguyen Van Anh,01/01/1990,0123456789,nvA@example.com,nam,02/02/2004Address{so=1, duong=Duong 1, quan=Quan 1, thanhpho=TP HCM},EMP001,Quan ly,1000.0
+Huynh Gia Vi,01/01/1990,0123456789,nvA@example.com,nam,02/02/2004Address{so=2, duong=Duong 2, quan=Quan 2, thanhpho=TP HCM},EMP002,Quan ly,1000.0
+Vo Van Tuan,01/01/1990,0123456789,nvA@example.com,nam,02/02/2004Address{so=3, duong=Duong 3, quan=Quan 3, thanhpho=TP HCM},EMP003,Quan ly,1000.0
+Nguyen Tien Khanh,01/01/1990,0123456789,nvA@example.com,nam,02/02/2004Address{so=4, duong=Duong 4, quan=Quan 4, thanhpho=TP HCM},EMP004,Quan ly,1000.0
+Nguyen Khanh ,01/01/1990,0123456789,nvA@example.com,nam,02/02/2004Address{so=5, duong=Duong 5, quan=Quan 5, thanhpho=TP HCM},EMP005,Quan ly,1000.0

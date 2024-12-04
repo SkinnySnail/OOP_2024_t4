@@ -8,10 +8,12 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.Scanner;
 
+import Main.KiemTra;
+
 public class Kho implements iReaderWriter{
-    private ArrayList<Product> khoHang;
+    public ArrayList<Product> khoHang;
     Scanner sc = new Scanner(System.in);
-    
+    KiemTra kt = new KiemTra();
     public Kho() {
         khoHang = new ArrayList<>();
     }
@@ -24,16 +26,37 @@ public class Kho implements iReaderWriter{
             System.out.println(
                     "1. Tool.\n"
                 +   "2. Paper product.\n"
+                +   "3. Them so luong Tool.\n"
+                +   "4. Them so luong cho Paper product.\n"
             );
-            lc = sc.nextInt();
+            lc = kt.KiemTraNhapSoTuNhien();
             if(lc == 1){
                 Product sp = new Tool();
                 sp.nhap();
                 this.khoHang.add(sp);
+            break;
             }else if(lc == 2){
                 Product sw = new Paper_product();
                 sw.nhap();
                 this.khoHang.add(sw);
+            }else if(lc == 3){
+                Product spp = new Tool();
+                spp.nhap();
+                for (Product Product : khoHang) {
+                    if(Product.getProduct_id().equals(spp.getProduct_id())){
+                        Product.itemnum = Product.itemnum + spp.itemnum;
+                        break;
+                    }
+                }
+            }else if(lc == 4){
+                Product spx = new Paper_product();
+                spx.nhap();
+                for (Product Product : khoHang) {
+                    if(Product.getProduct_id().equals(spx.getProduct_id())){
+                        Product.itemnum = Product.itemnum + spx.itemnum;
+                        break;
+                    }
+                }
             }
         }while(lc != 0);
     }
@@ -147,8 +170,8 @@ public void timkiemProduct(String masp) {
             String line;
             while ((line = br.readLine()) != null) {
         
-                String[] parts = line.split("\\|");
-                    tenSP = parts[1].trim();
+                String[] parts = line.split(",");
+                    tenSP = parts[0].trim();
                     Soluong = Integer.parseInt(parts[2].trim()); 
                 
                 for(Product sp : khoHang){
@@ -159,9 +182,9 @@ public void timkiemProduct(String masp) {
                     }
 
                 }
+                br.close();
             }
-            br.close();
-            
+
         } catch (Exception e) {
             e.printStackTrace();
         }
