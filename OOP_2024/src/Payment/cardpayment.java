@@ -1,6 +1,5 @@
 package Payment;
 import java.util.Scanner;
-
 public class cardpayment extends payment {
     private String sothe;
     private String loaithe;
