@@ -1,6 +1,5 @@
 package Payment;
 import java.util.Scanner;
-
 public class cashpayment extends payment {
     private String tenthungan;
     private double sotiennhan;
@@ -11,35 +10,28 @@ public class cashpayment extends payment {
         this.sotiennhan = 0;
         this.sotientl = 0;
     }
-
     public cashpayment(double sotientt, String trangthaitt, String tenthungan, double sotiennhan){
         super(sotientt, "Tien mat", trangthaitt);
         this.tenthungan = tenthungan;
         this.sotiennhan = sotiennhan;
         this.sotientl = sotiennhan - sotientt;
     }
-
     public String getTenthungan(){
         return tenthungan;
     }
-
     public void setTenthungan(String tenthungan){
         this.tenthungan = tenthungan;
     }
-
     public double getSotiennhan(){
         return sotiennhan;
     }
-
     public void setSotiennhan(double sotiennhan){
         this.sotiennhan = sotiennhan;
         this.sotientl = sotiennhan - getSotientt();
     }
-
     public double getSotientl(){
         return sotientl;
     }
-
     @Override
     public void nhap(){
         super.nhap();
@@ -55,7 +47,6 @@ public class cashpayment extends payment {
         } while (this.sotiennhan < getSotientt());
         this.sotientl = this.sotiennhan - getSotientt();
     }
-
     @Override
     public String toString(){
         return super.toString() + "\nTen thu ngan : " + tenthungan + "\nSo tien khach tra : " + sotiennhan + "\nTien tra lai : " + sotientl;
