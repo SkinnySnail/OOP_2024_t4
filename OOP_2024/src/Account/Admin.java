@@ -93,7 +93,7 @@ public class Admin extends Account {
             System.out.println("-----------InforEmp----------+");
             System.out.println("1 : Xem thong tin Employee   |");
             System.out.println("2 : xoa thong tin Employee   |");
-            System.out.println("3 : Them thong tin Employe   |");
+            System.out.println("3 : Them thong tin Employee  |");
             System.out.println("0 : Thoat                    |");
             System.out.println("-----------------------------+");
             System.out.print("Nhap lua chon: ");
@@ -103,7 +103,7 @@ public class Admin extends Account {
                     empList.displayTTNV();
                     break;
                 case 2:
-                    empList.docFile(confirm);
+                    empList.docFile();
                     empList.displayTTNV();
                     empList.ghiFile();
                     break;
@@ -138,7 +138,7 @@ public class Admin extends Account {
             chon = sc.nextInt();
             switch (chon) {
                 case 1:
-                    cusList.docFile(confirm);
+                    cusList.docFile();
                     cusList.displayTTKH();
                     break;
                 case 2:
@@ -150,7 +150,7 @@ public class Admin extends Account {
                     KhachHang cus = new KhachHang();
                     cus.NhapTT();
                     cusList.themKhachHang(cus);
-                    cusList.ghiFile(confirm);
+                    cusList.ghiFile();
                     break;
                 case 0:
                     chon = 0;
@@ -222,11 +222,11 @@ public class Admin extends Account {
     public void readFile() {
         try {
             list.readAccount();
-            empList.initializeEmployees();
+            empList.createSampleData();
             empList.ghiFile();
             // cusList.defaultCustomers();
             // cusList.writeFile();
-        } catch (IOException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }

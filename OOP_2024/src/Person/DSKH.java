@@ -41,8 +41,8 @@ public class DSKH {
     }
 
     // Đọc dữ liệu khách hàng từ file
-    public void docFile(String filePath) {
-        try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
+    public void docFile() {
+        try (BufferedReader br = new BufferedReader(new FileReader("danhsachKH.txt"))) {
             String line;
             while ((line = br.readLine()) != null) {
                 String[] data = line.split(",");
@@ -57,8 +57,8 @@ public class DSKH {
     }
 
     // Ghi thông tin khách hàng vào file
-    public void ghiFile(String filePath){
-    try (BufferedWriter bw = new BufferedWriter(new FileWriter(filePath))) {
+    public void ghiFile(){
+    try (BufferedWriter bw = new BufferedWriter(new FileWriter("danhsachKH.txt"))) {
             for (KhachHang khachhang : khachHang) {
                 DiaChi diachi = khachhang.getDiaChi();
                 bw.write(String.join(",",

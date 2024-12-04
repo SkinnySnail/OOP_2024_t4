@@ -182,9 +182,9 @@ public void timkiemProduct(String masp) {
                     }
 
                 }
+                br.close();
             }
-            br.close();
-            
+
         } catch (Exception e) {
             e.printStackTrace();
         }

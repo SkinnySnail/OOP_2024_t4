@@ -42,8 +42,8 @@ public class DSNV
     }
 
     // Đọc dữ liệu nhân viên từ file
-    public void docFile(String filePath) {
-        try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
+    public void docFile() {
+        try (BufferedReader br = new BufferedReader(new FileReader("danhsachNV.txt"))) {
             String line;
             while ((line = br.readLine()) != null) {
                 String[] data = line.split(",");
@@ -57,8 +57,8 @@ public class DSNV
     }
 
     // Ghi thông tin nhân viên vào file
-    public void ghiFile(String filePath) {
-        try (BufferedWriter bw = new BufferedWriter(new FileWriter(filePath))) {
+    public void ghiFile() {
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter("danhsachNV.txt"))) {
             for (NhanVien nhanvien : nhanVien) {
                 DiaChi diachi = nhanvien.getDiaChi();
                 bw.write(String.join(",",

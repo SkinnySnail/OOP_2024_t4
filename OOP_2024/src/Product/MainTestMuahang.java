@@ -13,7 +13,7 @@ public class MainTestMuahang {
     static Kho khoHang = new Kho();
     static KiemTra kt = new KiemTra();
     static DanhSachGioHang dsGH = new DanhSachGioHang();
-
+    static bildetailList detailList = new bildetailList();
     static Scanner sc = new Scanner(System.in);
 
     static GioHang gioHang = new GioHang();
@@ -53,22 +53,14 @@ public class MainTestMuahang {
                     System.out.println("Gio hang dang trong vui long them truoc thi thanh toan !!!");
                 } else {
                     gioHang.ghiTenSPvaDonGiaVaoFile();
-                    //order.inputOrderInfo();
-                    //order.displayOrderInfo();
-                    //paymenu.selectPaymentmethod();
-                    //order.ghiFileOrder();
-                    //order.giamSoLuongSanPham();
-                    //gioHang.xoaTatCa();
+                    order.inputOrder();
+                    order.printOrder();
+                    paymenu.paymentmenu();
+                    detailList.writeFile();
+                    order.giamSoLuongSanPham();
+                    gioHang.xoaTatCa();
                     khoHang.CapNhatsl();
                 }
-
-                // dsGH.themVaoDanhSachGH(gioHang);
-
-                // HoaDon hd = new HoaDon(gioHang);
-                // dsHD.themVaoDanhSach(hd);
-                // luuData();
-                // hd.xuat();
-                // choice = 0;
             }
 
         } while (choice != 0);

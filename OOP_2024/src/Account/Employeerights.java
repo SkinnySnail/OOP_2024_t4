@@ -46,7 +46,7 @@ public class Employeerights extends Account {
             chon = sc.nextInt();
             switch (chon) {
                 case 1:
-                    cusList.docFile(confirm);
+                    cusList.docFile();
                     cusList.displayTTKH();
                     break;
                 // case 2:

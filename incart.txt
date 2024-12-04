@@ -1,1 +1,15 @@
 
+Phuong thuc thanh toan : Tien mat
+So tien thanh toan : 200000.0
+Trang thai thanh toan : yes
+Ten thu ngan : ukm
+So tien khach tra : 400000.0
+Tien tra lai : 200000.0
+----------------------
+Phuong thuc thanh toan : Tien mat
+So tien thanh toan : 100000.0
+Trang thai thanh toan : yes
+Ten thu ngan : Dang Khoa
+So tien khach tra : 200000.0
+Tien tra lai : 100000.0
+----------------------
