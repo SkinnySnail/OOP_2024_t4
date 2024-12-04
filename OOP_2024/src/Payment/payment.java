@@ -2,7 +2,6 @@ package Payment;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.io.*;
-
 public class payment {
     private double sotientt;
     private String phuongthuctt;
@@ -46,11 +45,9 @@ public class payment {
             this.trangthaitt = "Chua thanh toan";
         }
     }
-
     public String toString(){
         return "Phuong thuc thanh toan : " + phuongthuctt + "\nSo tien thanh toan : " + sotientt + "\nTrang thai thanh toan : " + trangthaitt;
     }
-
     public static void ghifile(ArrayList<payment> hoadon, boolean append){
         try (BufferedWriter ghi = new BufferedWriter(new FileWriter("incart.txt", append))){
             if (!append){
@@ -70,7 +67,6 @@ public class payment {
             System.out.println("Loi khong ghi duoc vao tep");
         }
     }    
-
     public static void docFile(String tenfile){
         try (BufferedReader doc = new BufferedReader(new FileReader(tenfile))){
             String dong;
