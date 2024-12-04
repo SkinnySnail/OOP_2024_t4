@@ -1,6 +1,8 @@
 package Product;
 import ORDER.*;
 import Payment.*;
+
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import Main.KiemTra;
@@ -53,8 +55,15 @@ public class MainTestMuahang {
                     System.out.println("Gio hang dang trong vui long them truoc thi thanh toan !!!");
                 } else {
                     gioHang.ghiTenSPvaDonGiaVaoFile();
+                    double tonggia = 0;
+                    ArrayList<orderItem> orderItems = gioHang.convertToOrderItems();
+                    for (orderItem item : orderItems) {
+                        order.addProduct(item);
+                        tonggia += item.totalValueProduct();
+                    }
                     order.inputOrder();
                     order.printOrder();
+                    System.out.println("Total Value Product: " + tonggia);
                     paymenu.paymentmenu();
                     detailList.writeFile();
                     order.giamSoLuongSanPham();

@@ -6,6 +6,7 @@ import java.util.Scanner;
 import java.io.FileWriter;
 import java.io.IOException;
 import Main.KiemTra;
+import ORDER.orderItem;
 
 
 public class GioHang {
@@ -168,6 +169,15 @@ public class GioHang {
             return true;
         }
         return false;
+    }
+
+    public ArrayList<orderItem> convertToOrderItems() {
+        ArrayList<orderItem> orderItems = new ArrayList<>();
+        for (Product product : gioHang) {
+            orderItem item = new orderItem(product.getProduct_name(), product.getItemnum(), product.getPrice());
+            orderItems.add(item);
+        }
+        return orderItems;
     }
 
     @Override

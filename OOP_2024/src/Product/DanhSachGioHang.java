@@ -5,6 +5,8 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.util.ArrayList;
 
+import ORDER.orderItem;
+
 public class DanhSachGioHang implements iReaderWriter{ 
     private ArrayList<GioHang> dsGioHang;
 

@@ -83,7 +83,7 @@ public class order {
 
     public void tonggiatri(){
         totalValue = 0;
-        for(int i = 0; i < productCount; i++){
+        for(int i = 0; i < getProductCount(); i++){
             totalValue += orderItemsArray[i].totalValueProduct();
         }
     }
@@ -134,15 +134,15 @@ public class order {
     }
 
     public void printOrder(){
-        System.out.println("OrderID: " + orderID);
-        System.out.println("CustomerID: " + customerID);
-        System.out.println("EmployeeID: " + EmployeeId);
-        System.out.println("OrderDate: " + orderDate);
+        System.out.println("OrderID: " + getOrderID());
+        System.out.println("CustomerID: " + get_customerID());
+        System.out.println("EmployeeID: " + getEmployeeID());
+        System.out.println("OrderDate: " + getOrderDate());
         System.out.print("Product: ");
-        for(int i = 0; i < productCount; i++){
-            System.out.println(orderItemsArray[i].getproductName() + " Quantity: " + orderItemsArray[i].getquanTiTy() + "Price: " + orderItemsArray[i].getPrice() + "Total: " + orderItemsArray[i].totalValueProduct());
+        for(int i = 0; i < getProductCount(); i++){
+            System.out.println(orderItemsArray[i].getproductName() + " Quantity: " + orderItemsArray[i].getquanTiTy() + " Price: " + orderItemsArray[i].getPrice() + " Total: " + orderItemsArray[i].totalValueProduct());
         }
-        System.out.println("Total Value Product: " + totalValue);
+        
     }
 
     public String toString() {

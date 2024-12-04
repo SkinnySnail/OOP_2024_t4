@@ -1,1 +1,1 @@
-Tool,10000,10
+A4 khong tham nuoc,5000,5Paper,1500,4
