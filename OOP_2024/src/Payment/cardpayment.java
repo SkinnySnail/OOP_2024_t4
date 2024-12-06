@@ -93,6 +93,6 @@ public class cardpayment extends payment {
     }
     @Override
     public String toString(){
-        return super.toString() + "\nSo the : " + sothe + "\nLoai the : " + loaithe + "\nTen chu the : " + tenchuthe + "\nMat khau : " + matkhau;
+        return super.toString() + "\nSo the : " + sothe + "\nLoai the : " + loaithe + "\nTen chu the : " + tenchuthe + "\nMat khau : " + matkhau+ "\nSo tien khach tra : " + sotiennhan + "\nSo tien tra lai : " + sotientl;
     }
 }
